@@ -6,5 +6,6 @@
   "installCommand": "npm install",
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "comment": "This config is for Vercel. For Railway, use: npm run build && npm run start"
 }
