@@ -1,8 +1,9 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/public",
+  "outputDirectory": "dist",
   "framework": "vite",
+  "installCommand": "npm install",
   "env": {
     "NODE_ENV": "production"
   },
@@ -12,15 +13,5 @@
       "memory": 1024,
       "maxDuration": 60
     }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/public/$1"
-    }
-  ]
+  }
 }
