@@ -18,8 +18,13 @@ COPY MernfolioSite/ ./
 # Build the project
 RUN npm run build
 
-# Expose the port your app listens on (Railway default commonly 8080)
+# Expose the port (Railway default)
 EXPOSE 8080
 
-# Start the server
-CMD ["/bin/sh", "-c", "npm run start"]
+# Set environment variables for production
+ENV NODE_ENV=production
+ENV PORT=8080
+ENV HOST=0.0.0.0
+
+# Start the server - use node directly without cross-env wrapper
+CMD ["node", "dist/index.js"]
